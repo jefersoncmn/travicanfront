@@ -1,0 +1,24 @@
+<div class="backgroundImage">
+    <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+        <mat-card [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+            <mat-card-title>Registrar</mat-card-title>
+    
+            <mat-card-content fxLayout="column">
+                <mat-form-field>
+                    <input matInput placeholder="Nome Completo" formControlName="name">
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="Username" formControlName="username">
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="Password" formControlName="password">
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="Email" formControlName="email">
+                </mat-form-field>
+            </mat-card-content>
+    
+            <button mat-raised-button color="accent" type="submit" [disabled]="!profileForm.valid">Registrar e logar</button>
+        </mat-card>
+    </form>
+</div>

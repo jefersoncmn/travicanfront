@@ -1,0 +1,9 @@
+<mat-drawer-container class="example-container" id="backgroundImage">
+    <mat-drawer mode="side" opened style="width: 30%; background-color: transparent;">
+        <app-user-tab [user]="user!"></app-user-tab>
+        <!-- <div fxLayout="column" fxLayoutAlign="space-around center" >
+            <h3>{{user!.name}}</h3>
+        </div> -->
+    </mat-drawer>
+    <mat-drawer-content><router-outlet></router-outlet></mat-drawer-content>
+</mat-drawer-container>

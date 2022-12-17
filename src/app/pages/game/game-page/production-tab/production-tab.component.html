@@ -1,0 +1,12 @@
+<mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title>Produções</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <div *ngFor="let production of user.land.productions">
+            <p>{{production.name}}</p>
+            <p>Nivel: {{production.level}}</p>
+            <button mat-button>Melhorar</button>
+        </div>
+    </mat-card-content>
+</mat-card>
