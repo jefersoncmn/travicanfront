@@ -3,16 +3,23 @@
         <mat-card [formGroup]="profileForm" (ngSubmit)="onSubmit()" fxFlex="30%">
             <mat-card-title>Login</mat-card-title>
     
-            <mat-card-content fxLayout="column">
+            <mat-card-content>
                 <mat-form-field>
                     <input matInput placeholder="Username" formControlName="username">
+                    <mat-error>
+                        Insira nome de usuário válido
+                    </mat-error>
                 </mat-form-field>
                 <mat-form-field>
-                    <input matInput placeholder="Password" formControlName="password">
+                    <input matInput placeholder="Senha" formControlName="password">
+                    <mat-error>
+                        Insira senha válida
+                    </mat-error>
                 </mat-form-field>
             </mat-card-content>
     
             <button mat-raised-button color="accent" type="submit" [disabled]="!profileForm.valid">Login</button>
+            <mat-error *ngIf="loginState == 'Error'">Username e/ou senha incorretos</mat-error>
         </mat-card>
     </form>
     

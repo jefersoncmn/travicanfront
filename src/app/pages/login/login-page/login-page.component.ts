@@ -16,6 +16,8 @@ export class LoginPageComponent implements OnInit {
     password: ['', Validators.required],
   });
 
+  loginState = "Normal";
+
   constructor(
     private formBuilder: FormBuilder,
     private loginService: LoginService,
@@ -37,6 +39,8 @@ export class LoginPageComponent implements OnInit {
         this.localStorage.set("refreshToken", response.refreshToken.id);
         this.localStorage.set("userId", response.refreshToken.id_user);
         this.router.navigate(['/game']);
+      } else {
+        this.loginState = 'Error';
       }
     });
   }

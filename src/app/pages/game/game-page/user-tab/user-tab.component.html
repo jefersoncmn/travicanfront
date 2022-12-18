@@ -8,7 +8,7 @@
             <p>{{resource.resourceType.name}}: {{resource.amount}}</p>
         </div>
         <button mat-button (click)="ShowProductionsTab()">Produções</button>
-        <button mat-button [routerLink]="['/game/production']">Exércitos</button>
+        <button mat-button (click)="ShowArmyTab()">Exércitos</button>
+        <button mat-button (click)="ShowRankingTab()">Rank</button>
     </mat-card-content>
 </mat-card>
-<app-production-tab [user]="user"></app-production-tab>

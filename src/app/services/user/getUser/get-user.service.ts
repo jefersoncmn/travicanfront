@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders} from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -10,8 +10,14 @@ export class GetUserService {
     private http: HttpClient,
   ) { }
 
-  Get(id:string){
-    console.log(this.url+id);
-    return this.http.get<any>(this.url+id);
+  Get(id:string, token:string){
+    // const header = new HttpHeaders(
+    //   {
+    //     'Content-Type': 'application/json',
+    //     'Authorization': `Bearer ${token}`
+    //   }
+    // );
+    // console.log(this.url+id);
+    return this.http.get<any>(this.url+id, {headers:{"Authorization":"Bearer "+token}});
   }
 }

@@ -1,1 +1,9 @@
-<p>map-page works!</p>
+<div *ngFor="let _x of [].constructor(4); let x = index" style="display: flex;">
+    <div *ngFor="let _y of [].constructor(4); let y = index" >
+        
+        <div *ngFor="let land of lands" >
+            <div id="land" *ngIf="land.positionY == y && land.positionX == x"></div>
+            <div id="field" *ngIf="land.positionY != y || land.positionX != x"></div>
+        </div>        
+    </div>
+</div>

@@ -1,0 +1,15 @@
+<div class="background">
+    <mat-card class="example-card">
+        <mat-card-header>
+          <mat-card-title>Ranking</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <div *ngFor="let user of users">
+                <b>{{user.name}}</b>
+                <div *ngFor="let resource of user.land.resources">
+                    <p>{{resource.resourceType.name}}: {{resource.amount}}</p>
+                </div>
+            </div> 
+        </mat-card-content>
+    </mat-card>
+</div>

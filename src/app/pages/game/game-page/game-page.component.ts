@@ -22,10 +22,9 @@ export class GamePageComponent implements OnInit {
   
   
   LoadUserData(){
-    this.getUserService.Get(this.localStorageService.get("userId")).subscribe((retorno)=>{
+    this.getUserService.Get(this.localStorageService.get("userId"), this.localStorageService.get("token")).subscribe((retorno)=>{
       this.user = retorno;
-      console.log(this.user);
-      this.localStorageService.set('userData',this.user);
+      console.log(retorno);
     })
   }
 }

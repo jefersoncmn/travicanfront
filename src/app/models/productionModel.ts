@@ -5,4 +5,6 @@ export interface IProduction{
     name: string;
     level: number;
     returnedResource: IResource;
+    timeToHarvest: number;
+    timeToUpgrade: number;
 }

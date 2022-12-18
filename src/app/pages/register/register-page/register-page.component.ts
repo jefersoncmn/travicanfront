@@ -41,6 +41,7 @@ export class RegisterPageComponent implements OnInit {
               this.localStorage.clear();
               this.localStorage.set("token", loginResponse.token);
               this.localStorage.set("refreshToken", loginResponse.refreshToken.id);
+              this.localStorage.set("userId", response.refreshToken.id_user);
               this.router.navigate(['/game']);
             }
         })

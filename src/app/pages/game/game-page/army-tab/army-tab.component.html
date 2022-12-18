@@ -1,0 +1,26 @@
+<div class="background">
+    <mat-card class="example-card" *ngIf="!selectionSoldierTabEnable">
+        <mat-card-header>
+          <mat-card-title>Exércitos</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <div *ngFor="let soldier of army">
+                <p>{{soldier.name}}</p>
+                <p>Nivel: {{soldier.attack}}</p>
+                <button mat-button (click)="DeleteSoldier(soldier.id)">Demitir</button>
+            </div>
+            <p *ngIf="!army">Não tem soldados</p>
+            <button mat-button *ngIf="!selectionSoldierTabEnable" (click)="ShowSelectionSoldierTab()">Contratar</button>
+
+        </mat-card-content>
+    </mat-card>
+
+    <mat-list role="list" *ngIf="selectionSoldierTabEnable">
+        <div *ngFor="let soldierToBuy of soldiers">
+            <mat-list-item role="listitem" style="height: 100px;">
+                <p>{{soldierToBuy.name}} - Custo: {{soldierToBuy.costToSpawn.resourceType.name}}:{{soldierToBuy.costToSpawn.amount}}</p>
+                <button mat-button (click)="BuySoldier(soldierToBuy.id)">Contratar</button>
+            </mat-list-item>
+        </div>
+    </mat-list>
+</div>

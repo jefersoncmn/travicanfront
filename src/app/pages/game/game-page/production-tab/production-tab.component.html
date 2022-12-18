@@ -1,12 +1,20 @@
-<mat-card class="example-card">
-    <mat-card-header>
-      <mat-card-title>Produções</mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-        <div *ngFor="let production of user.land.productions">
-            <p>{{production.name}}</p>
-            <p>Nivel: {{production.level}}</p>
-            <button mat-button>Melhorar</button>
-        </div>
-    </mat-card-content>
-</mat-card>
+<div class="background">
+    <mat-card class="example-card">
+        <mat-card-header>
+          <mat-card-title>Produções</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <div *ngFor="let production of productions">
+                <h2>{{production.name}}</h2>
+                <p>Nivel: {{production.level}}</p>
+                <p>Ganho: {{production.returnedResource.amount}}</p>
+                <p>Tempo para coleta: {{production.timeToHarvest}} segundos</p>
+                <div *ngFor="let toByProduction of allProductions">
+                    <div *ngIf="toByProduction.name == production.name && toByProduction.level == production.level+1">
+                        <button mat-button (click)="UpgradeProduction(toByProduction.id, toByProduction.timeToUpgrade)">Melhorar {{toByProduction.name}} para nível {{toByProduction.level}} - Produção: {{toByProduction.returnedResource.amount}}</button>
+                    </div>
+                </div>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>

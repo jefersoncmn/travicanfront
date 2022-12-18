@@ -6,15 +6,27 @@
             <mat-card-content fxLayout="column">
                 <mat-form-field>
                     <input matInput placeholder="Nome Completo" formControlName="name">
+                    <mat-error>
+                        Insira nome válido
+                    </mat-error>
                 </mat-form-field>
                 <mat-form-field>
                     <input matInput placeholder="Username" formControlName="username">
+                    <mat-error>
+                        Insira nome de usuário válido
+                    </mat-error>
                 </mat-form-field>
                 <mat-form-field>
-                    <input matInput placeholder="Password" formControlName="password">
+                    <input type="password" matInput placeholder="Password" formControlName="password">
+                    <mat-error>
+                        Insira senha válida
+                    </mat-error>
                 </mat-form-field>
                 <mat-form-field>
-                    <input matInput placeholder="Email" formControlName="email">
+                    <input type="email" matInput placeholder="Email" formControlName="email">
+                    <mat-error>
+                        Insira email valido
+                    </mat-error>
                 </mat-form-field>
             </mat-card-content>
     

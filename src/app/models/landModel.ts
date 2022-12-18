@@ -10,7 +10,7 @@ export interface ILand{
     world: IWorld;
     resources: IResource[];
     army: IArmy;
-    productions: IProduction[];
+    ProductionLand: IProduction[];
     landAttack: IWar;
     landDefense: IWar;
 }

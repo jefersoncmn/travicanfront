@@ -21,7 +21,10 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { UserTabComponent } from './pages/game/game-page/user-tab/user-tab.component';
 import { ProductionTabComponent } from './pages/game/game-page/production-tab/production-tab.component';
-
+import { ArmyTabComponent } from './pages/game/game-page/army-tab/army-tab.component';
+import { RankingTabComponent } from './pages/game/game-page/ranking-tab/ranking-tab.component';
+import { MatListModule } from '@angular/material/list';
+import { MatGridListModule } from '@angular/material/grid-list';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,6 +37,8 @@ import { ProductionTabComponent } from './pages/game/game-page/production-tab/pr
     VillagePageComponent,
     UserTabComponent,
     ProductionTabComponent,
+    ArmyTabComponent,
+    RankingTabComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,7 +51,9 @@ import { ProductionTabComponent } from './pages/game/game-page/production-tab/pr
     MatCardModule,
     MatButtonModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatListModule,
+    MatGridListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
